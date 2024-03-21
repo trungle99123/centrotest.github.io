@@ -13,32 +13,14 @@
 <!-- Script to handle conversion tracking -->
 <script>
     document.getElementById("myButtonID").addEventListener("click", function() {
-        // Load the StackAdapt script asynchronously
-        var script = document.createElement('script');
-        script.async = true;
-        script.src = "https://tags.srv.stackadapt.com/events.js";
-        document.getElementsByTagName('head')[0].appendChild(script);
+        // Create an image element to load the tracking pixel
+        var trackingPixel = new Image(1, 1);
+        trackingPixel.src = "https://clickserv.sitescout.com/conv/e57eb7ccf216c012";
+        trackingPixel.style.position = "absolute";
+        trackingPixel.style.left = "-150px";
 
-        // Define the function to track conversion
-        !function(s,a,e,v,n,t,z){
-            if(s.saq) return;
-            n=s.saq=function(){
-                n.callMethod ? n.callMethod.apply(n,arguments) : n.queue.push(arguments);
-            };
-            if(!s._saq) s._saq=n;
-            n.push=n;
-            n.loaded=!0;
-            n.version='1.0';
-            n.queue=[];
-            t=a.createElement(e);
-            t.async=!0;
-            t.src=v;
-            z=a.getElementsByTagName(e)[0];
-            z.parentNode.insertBefore(t,z);
-        }(window,document,'script','https://tags.srv.stackadapt.com/events.js');
-
-        // Call the conversion tracking function with your conversion ID
-        saq('conv', 'fFGGV5Hhl8BmL0ngBwNe3C');
+        // Append the image to the body to trigger the pixel request
+        document.body.appendChild(trackingPixel);
     });
 </script>
 </body>
