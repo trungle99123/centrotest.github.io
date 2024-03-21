@@ -4,23 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-<script src ="https://cdn01.basis.net/assets/up.js?um=1"></script>
-<script type="text/javascript">
-	cntrUpTag.track('cntrData', 'ab098eb5999f4169');
-</script>
+
 </head>
 <body>
-	<div>tesss universal tag here</div>
-<div><img src="https://pixel.sitescout.com/up/2baf8a9309d2c6b5" width="1" height="1" style="position: absolute; left: -150px;" /></div>
-    <div>Hello world!</div>
-	
+<!-- Button to trigger conversion tracking -->
+<button id="myButtonID">Click Me</button>
 
-<img src="https://clickserv.sitescout.com/conv/7267341139841f47"  width="1" height="1" style="position: absolute; left: -150px;" />
-<a> Click me please!<img src="https://clickserv.sitescout.com/conv/7267341139841f47"  width="1" height="1" style="position: absolute; left: -150px;" /></a>
-	<button>
-<a href="https://github.com/trungle99123/centrotest.github.io" onclick="new Image().src='https://clickserv.sitescout.com/conv/1d77af82f32087cd'">click me</a>
-	</button>
-	<script type="text/javascript">var ssaUrl = 'https://' + 'clickserv.sitescout.com/conv/902593f660c11bf7';new Image().src = ssaUrl; (function(d) {  var syncUrl = 'https://' + 'pixel.sitescout.com/dmp/asyncPixelSync'; var iframe = d.createElement('iframe'); (iframe.frameElement || iframe).style.cssText = "width: 0; height: 0; border: 0; display: none;"; iframe.src = "javascript:false"; d.body.appendChild(iframe); var doc = iframe.contentWindow.document; doc.open().write('<body onload="window.location.href=\''+syncUrl+'\'">'); doc.close(); })(document); </script>
-	
+<!-- Script to handle conversion tracking -->
+<script>
+    document.getElementById("myButtonID").addEventListener("click", function() {
+        // Load the StackAdapt script asynchronously
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = "https://tags.srv.stackadapt.com/events.js";
+        document.getElementsByTagName('head')[0].appendChild(script);
+
+        // Define the function to track conversion
+        !function(s,a,e,v,n,t,z){
+            if(s.saq) return;
+            n=s.saq=function(){
+                n.callMethod ? n.callMethod.apply(n,arguments) : n.queue.push(arguments);
+            };
+            if(!s._saq) s._saq=n;
+            n.push=n;
+            n.loaded=!0;
+            n.version='1.0';
+            n.queue=[];
+            t=a.createElement(e);
+            t.async=!0;
+            t.src=v;
+            z=a.getElementsByTagName(e)[0];
+            z.parentNode.insertBefore(t,z);
+        }(window,document,'script','https://tags.srv.stackadapt.com/events.js');
+
+        // Call the conversion tracking function with your conversion ID
+        saq('conv', 'fFGGV5Hhl8BmL0ngBwNe3C');
+    });
+</script>
 </body>
 </html>
