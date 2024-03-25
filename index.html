@@ -12,5 +12,17 @@
 
     <div>Universal pixel</div>
     <img src="https://pixel.sitescout.com/up/b24f96e188db6866" width="1" height="1" style="position: absolute; left: -150px;" />
+
+
+    <div>stackadapt</div>
+    <!-- Somewhere there is a button that performs Add to Cart -->
+<button id="myButtonID">Click me to sign up</button>
+
+<script>
+// Add the conversion tracker to the button's click handler
+document.getElementById("myButtonID").addEventListener("click",function() {
+  saq('ts','VFMLUVSznGfnV1CPxQODSw', { signup: 'click_sign_up' });
+});
+</script>
 </body>
 </html>
